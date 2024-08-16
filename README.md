@@ -59,7 +59,6 @@ Response: Mentor object
 - **Endpoint:** `POST /api/student`
 - **Body:**
  ```json
-Copy code
 {
   "name": "Student Name"
 }
@@ -78,7 +77,6 @@ Response: Array of student objects
 - **Endpoint:**  `POST /api/assignMentor`
 - **Body:**
 ```json
-Copy code
 {
   "mentorId": "mentor-id",
   "studentId": "student-id"
@@ -90,7 +88,6 @@ Response: Updated mentor object
 - **Endpoint:**  `POST /api/assignMultipleMentors`
 - **Body:**
 ```json
-Copy code
 {
   "mentorId": "mentor-id",
   "studentIds": ["student-id1", "student-id2"]
@@ -102,7 +99,6 @@ Response: Updated mentor object
 - **Endpoint:**  `PUT /api/changeMentor/:studentId`
 - **Body:**
 ```json
-Copy code
 {
   "mentorId": "new-mentor-id"
 }
