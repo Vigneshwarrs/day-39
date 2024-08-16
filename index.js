@@ -10,7 +10,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 mongoose
-  .connect("mongodb://localhost:27017/mentorStudentDB")
+  .connect("mongodb+srv://vigneshwarrs:MongoDB24@cluster.jrh0g.mongodb.net/mentorStudentDB")
   .then(() => {
     console.log("Connected to MongoDB");
   })
