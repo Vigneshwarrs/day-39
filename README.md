@@ -24,8 +24,8 @@ This is a simple API built using Node.js and Express for managing mentors and st
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/your-username/mentor-student-api.git
-    cd mentor-student-api
+    git clone https://github.com/Vigneshwarrs/day-39
+    cd day-39
     ```
 
 2. Install dependencies:
@@ -46,60 +46,73 @@ This is a simple API built using Node.js and Express for managing mentors and st
 
 #### 1. Create a Mentor
 
-- **Endpoint:** `POST /mentor`
+- **Endpoint:** `POST /api/mentor`
 - **Body:**
   ```json
   {
     "name": "Mentor Name"
   }
+  ```
 Response: Mentor object
-2. Create a Student
-Endpoint: POST /student
-Body:
-json
+
+#### 2. Create a Student
+- **Endpoint:** `POST /api/student`
+- **Body:**
+ ```json
 Copy code
 {
   "name": "Student Name"
 }
+```
 Response: Student object
-3. Get All Mentors
-Endpoint: GET /mentor
+
+#### 3. Get All Mentors
+- **Endpoint:**  `GET /api/mentor`
 Response: Array of mentor objects
-4. Get All Students
-Endpoint: GET /student
+
+#### 4. Get All Students
+- **Endpoint:**  `GET /api/student`
 Response: Array of student objects
-5. Assign a Student to a Mentor
-Endpoint: POST /assignMentor
-Body:
-json
+
+#### 5. Assign a Student to a Mentor
+- **Endpoint:**  `POST /api/assignMentor`
+- **Body:**
+```json
 Copy code
 {
   "mentorId": "mentor-id",
   "studentId": "student-id"
 }
+```
 Response: Updated mentor object
-6. Assign Multiple Students to a Mentor
-Endpoint: POST /assignMultipleMentors
-Body:
-json
+
+#### 6. Assign Multiple Students to a Mentor
+- **Endpoint:**  `POST /api/assignMultipleMentors`
+- **Body:**
+```json
 Copy code
 {
   "mentorId": "mentor-id",
   "studentIds": ["student-id1", "student-id2"]
 }
+```
 Response: Updated mentor object
-7. Change Mentor for a Student
-Endpoint: PUT /changeMentor/:studentId
-Body:
-json
+
+#### 7. Change Mentor for a Student
+- **Endpoint:**  `PUT /api/changeMentor/:studentId`
+- **Body:**
+```json
 Copy code
 {
   "mentorId": "new-mentor-id"
 }
+```
 Response: Updated student object
-8. Get All Students for a Particular Mentor
-Endpoint: GET /students/:mentorId
+
+#### 8. Get All Students for a Particular Mentor
+- **Endpoint:**  `GET /api/students/:mentorId`
 Response: Object containing the mentor and an array of assigned student objects
-9. Get Previously Assigned Mentors for a Student
-Endpoint: GET /previousMentors/:studentId
+
+#### 9. Get Previously Assigned Mentors for a Student
+- **Endpoint:**  `GET /api/previousMentors/:studentId`
 Response: Array of mentor objects that were previously assigned to the student
