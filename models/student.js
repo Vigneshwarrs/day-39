@@ -12,7 +12,25 @@ const studentSchema = new mongoose.Schema({
     previousMentors: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Mentor'
-    }] 
+    }],  
+    email: {
+        type: String,
+        required: true,
+        unique: true,
+        match: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+    },
+    course: {
+        type: String,
+        required: true
+    },
+    specialization: {
+        type: String,
+        required: true
+    },
+    batch: {
+        type: String,
+        required: true
+    }
 });
 
 const Student = mongoose.model("Student", studentSchema);

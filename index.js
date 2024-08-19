@@ -4,13 +4,15 @@ const mongoose = require("mongoose");
 const app = express()
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const port = 5000;
+const dotenv = require('dotenv');
 
 app.use(cors());
 app.use(bodyParser.json());
 
+dotenv.config();
+
 mongoose
-  .connect("mongodb+srv://vigneshwarrs:MongoDB24@cluster.jrh0g.mongodb.net/mentorStudentDB")
+  .connect(process.env.MONGO_URI)
   .then(() => {
     console.log("Connected to MongoDB");
   })
@@ -20,6 +22,6 @@ mongoose
 
   app.use('/api', router);
 
-app.listen(port,()=>{
-    console.log(`Server running on a port ${port}`);
+app.listen(process.env.PORT,()=>{
+    console.log(`Server running on a port ${process.env.PORT}`);
 })
